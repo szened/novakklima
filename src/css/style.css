@@ -93,7 +93,6 @@ select {
 }
 
 html {
-  //background-color: var(--background-color);
   font-family: 'Montserrat', sans-serif;
   
 }
@@ -109,8 +108,8 @@ body {
 }
 
 header {
-  //background-color: var(--background-color);
-  //background-color: #604D3E;
+  /*background-color: var(--background-color);*/
+  /*background-color: #604D3E;*/
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -125,7 +124,7 @@ header {
 
 .main-nav {
   justify-content: center;
-  //width: 80%;
+  /* width: 80%; */
 }
 
 .main-nav-ul {
@@ -144,21 +143,21 @@ header {
 }
 
 main {
-  //background-color: var(--background-color);
-  //background-color: azure;
+  /* background-color: var(--background-color); */
+  /* background-color: azure; */
 
-  //background-position: top 20% right 50%;
+  /* background-position: top 20% right 50%; */
   
-  //width: 100%;
-  //height: 100%;
-  //resize: vertical; 
-  //overflow: visible;
-  //display: flex;
-  //justify-content: center;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* resize: vertical;  */
+  /* overflow: visible; */
+  /* display: flex; */
+  /* justify-content: center; */
 }
 
 .big-picture {
-  //height: 100%;
+  /* height: 100%; */
   background-image: url("../assets/img/novak-klima-MozJPEG-Q75.jpg");
   background-size: cover;
   background-position: center;
@@ -280,7 +279,7 @@ main {
 
 footer {
   min-height: 6rem;
-  //background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   background-color: #ddd;
 }
 
