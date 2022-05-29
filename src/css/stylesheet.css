@@ -1,0 +1,717 @@
+
+/* The :where() always has 0 specificity. https://developer.mozilla.org/en-US/docs/Web/CSS/:where */
+
+/* Allways declare a fallback value to CSS variables like - property: custom variable, fallback value;
+  :root { --txt-color: #f00;} | color: var(--txt-color, red); */
+
+/* Comment everything
+  Colors:
+  --brand: blue; - used for headers and links
+  --text: black; - used for body text ... 
+ */
+:root {
+  --paragraph: calc(1rem + 0.2vw);
+
+  /* If the <header> is set { position: sticky; } use this to prevent that 
+  the header cover the top of the anchor */
+  --header-height: 3rem;
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+
+  --color-link: blue;
+  --color-link--hover: lime;
+  --font-family--base: Arial, Helvetica, sans-serif;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /* This inherited from html */
+  margin: 0;
+  padding: 0;
+}
+
+/* Set default html style */
+html {
+  box-sizing: border-box; /* Reset box sizing of all elements */
+  scroll-behavior: smooth;
+  color: #0f0;
+}
+
+/* +:To make it easier to visually identify an object */
+.help {
+  outline: 1px red solid;
+}
+
+/* --------------------- Semantic HTML --------------------- */
+
+/* Set default body style */
+body {
+  min-height: 100vh; 
+  /* max-width: 70rem;  +: Only for the test page: stylesheet.html */
+  margin: 0 auto; /* Centers the page content */
+  font-family: var(--font-family--base);
+  hyphens: auto; /* The language attribute example <html lang="en-US">, must be defined for correct hyphenation. Hyphenation rules are language-specific. In HTML, the language is determined by the lang attribute, and browsers will hyphenate only if this attribute is present and the appropriate hyphenation dictionary is available [https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens]*/
+  font-kerning: normal; /* Font kerning information stored in the font must be applied. */
+  background-color: whitesmoke;
+}
+
+ul,
+ol,
+dl {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+/* Reset margins on paragraphs */
+p {
+    margin-bottom: 1rem; 
+    margin-top: 0;
+}
+
+/* Fix bold weight (in firefox) */
+strong,
+b {
+    font-weight: bold;
+}
+
+/* Make images and videos responsive by default */
+img,
+video {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Remove border from iframe */
+iframe {
+    border: 0;
+}
+
+/* Reset table border */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td,
+th {
+    padding: 0;
+}
+
+header {
+  height: var(--header-height);
+  /* If there is some content before the header (Example below at the lists)
+  position: sticky;
+  top: 0;
+  */
+}
+
+nav {
+  background-color: inherit;
+}
+
+main {
+  color: darkslategray;
+}
+
+aside {
+  background-color: inherit;
+}
+
+section {
+  margin: 2rem;
+  padding: 0.5rem;
+  border: 1px solid #10101010;
+}
+
+article {
+  margin: 2rem 0;
+  padding: 0.5rem;
+  background-color: #7758ff09;
+}
+
+footer {
+  background-color: inherit;
+}
+
+/* --------------------- Headings --------------------- */
+
+/* This allows for important words "keywords" to appear embedded in any kind of text, not just in headings. */
+/* One h1 per page or <section> */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  /* font-size: 1rem; */
+  font-size: var(--paragraph);
+  line-height: 1.75;
+  font-weight: unset;
+}
+
+p:not(:last-of-type) {
+  padding-bottom: 1em;
+}
+
+.paragraph-max {
+  width: clamp(40ch, 99%, 60ch);
+}
+
+.paragraph-min {
+  width: clamp(15ch, 30ch, 40ch);
+}
+
+/* Warning: <hgroup> should not be used because no assistive technology supports it, and as a result it has a detrimental effect on assistance for headings placed within it. */
+hgroup {
+  /*background-color: inherit;*/
+}
+
+/* Don’t hyphenate Headings, and avoid breaking proper&#160;names over two lines if possible. */
+/* To [Proper Names] use &#160; NON-BREAKING SPACE insead of regular spaces */
+.heading-1,
+.heading-2,
+.heading-3,
+.heading-4,
+.heading-5,
+.heading-6 {
+  font-weight: bold;
+  font-weight: 900;
+  text-transform: uppercase;
+  /* Never hyphenate within a headline. When line breaks are needed, break at the end of a phrase. */
+  hyphens: none; 
+
+  padding: 0.4em 0 0.2em;
+  line-height: 1;
+}
+
+/* Main Heading (usually the h1-element) */
+.heading-1 {
+  /* font-size: 4rem; */
+  font-size: calc(2rem + 2vw);
+  text-transform: uppercase;
+  
+}
+
+.heading-2 {
+  /* font-size: 2.5rem; */
+  font-size: calc(1rem + 2vw);
+  text-transform: uppercase;
+  
+}
+
+.heading-3 {
+  /* font-size: 2rem; */
+  font-size: calc(1rem + 1vw);
+  text-transform: uppercase;
+  
+}
+
+/* tags, legal texts, */
+.heading-4 {
+  /* font-size: 1.5rem; */
+  font-size: calc(1rem + 0.5vw);
+  text-transform: uppercase;
+  
+}
+
+/* tags, legal texts, */
+.heading-5 {
+  /* font-size: 1.25rem; */
+  font-size: calc(1rem + 0.3vw);
+  text-transform: uppercase;
+  
+}
+
+/* tags, legal texts, */
+.heading-6 {
+  /* font-size: 1.1rem; */
+  font-size: calc(1rem + 0.1vw);
+  text-transform: uppercase;
+  
+}
+
+/* Newspaper style - similar to printing */
+.headline {
+  font-size: calc(4rem + 2vw);
+  text-transform: uppercase;
+  font-weight: 900;
+  hyphens: none;
+}
+
+/* !: todo */
+
+.head {
+
+}
+.header {}
+.heading {}
+.title {}
+.lable {
+  font-size: calc(1rem + 0.1vw);
+  text-transform: uppercase;
+}
+.caption {
+  font-size: calc(1rem + 0.1vw);
+}
+
+
+/* --------------------- Horizontal line --------------------- */
+
+hr {
+  background-color: inherit;
+}
+
+/* --------------------- Type related --------------------- */
+
+em {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+small {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+/* !: Deprecated - use the <abbr> instead */
+acronym {
+  text-transform: uppercase;
+}
+
+/* <abbr title="Cascading Style Sheets">CSS</abbr> */
+abbr {
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+  background-color: #d0ffe2;
+  color: inherit;
+}
+
+del {
+  text-decoration-line: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #333;
+}
+
+ins {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+kbd {
+  padding: 2px 4px;
+  font-size: 80%;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #333;
+}
+
+code {
+  font-family: monospace;
+  padding: 2px 4px;
+  font-size: 80%;
+  color: #333;
+  border-radius: 3px;
+  border: #bbbbbb 1px solid;
+  background-color: #e2e2e2;
+}
+
+samp {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+var {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+sub {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+sup {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+/* ---=== The blockquote & q ===--- */
+/* # All quotation (<q> or <blockquote>) must have a lang="..." attribite! */
+:root {
+  --q-bq-width: 56.25em;
+  --border: 2px solid red;
+}
+
+q,
+blockquote,
+blockquote + cite {
+  max-width: var(--q-bq-width);
+}
+
+blockquote,
+blockquote + cite {
+  margin: 0 2em;
+  padding: 1rem 0;
+  font-size: inherit;
+  line-height: inherit;
+  position: relative;
+  color: inherit;
+}
+
+q,
+blockquote::before {
+  content: open-quote;
+}
+
+q,
+blockquote::after {
+  content: close-quote;
+}
+
+blockquote > q,
+q > blockquote,
+q > q {
+  margin: 0;
+}
+
+cite {
+  display: block;
+  font-style: italic;
+  text-align: end;
+}
+
+/*
+.quote-with-cite {
+  max-width: var(--q-bq-width);
+}
+*/
+/* ======================================== *\
+
+  Lists & Tables
+
+\* ======================================== */
+
+/* ---=== The Table elements ===--- */
+
+table {
+  width: 100%;
+  background-color: inherit;
+  color: darkslategray;
+  margin: 1rem 0;
+  outline: 6px solid #ec0abb8e;
+  border: 5px dotted red;
+}
+
+caption {
+  background-color: inherit;
+  color: darkslategray;
+  outline: 1px solid rgb(241, 139, 139);
+  padding: 0.6em;
+}
+
+tbody {
+  background-color: inherit;
+  color: darkslategray;
+  padding: 0.6rem;
+}
+
+th {
+  background-color: inherit;
+  color: darkslategray;
+  padding: 0.6rem;
+  background-color: honeydew;
+}
+
+tr {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+td {
+  font-size: 0.8rem;
+  background-color: inherit;
+  color: darkslategray;
+  padding: 0.6rem;
+  outline: 4px solid #80808033;
+}
+
+.number {
+  text-align: end;
+}
+
+/* ---=== The Description or definition list ===--- */
+
+dl {
+  background-color: inherit;
+  color: darkslategray;
+
+  margin: 1em;
+}
+
+/* The Description terms */
+dt {
+  background-color: inherit;
+  color: darkslategray;
+
+  margin-top: 0.4em;
+  padding: 0.2em;
+  font-weight: bolder;
+}
+
+/* Colon after the description term */
+dt::after {
+  content: "\2009: ";
+}
+
+/* The Description descriptions */
+dd {
+  background-color: inherit;
+  color: darkslategray;
+
+  font-style: italic;
+  padding: 0 0 0 0.6em;
+}
+
+/* ---=== The Ordered & Unordered List elements ===--- */
+ol,
+ul {
+  margin: 0.6em 0;
+  padding-left: 2.4rem;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+li {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-link--hover);
+}
+
+/* Example to position: sticky; */
+
+.list-header {
+  position: sticky;
+  top: 0;
+  background-color: #a6d400;
+  color: #fff;
+  padding: 2rem;
+}
+
+/* ---=== Address ===--- */
+/*
+    house_number:  17
+    road:          Rue du Médecin-Colonel Calbairac
+    neighbourhood: Lafourguette
+    suburb:        Toulouse Ouest
+    postcode:      31000
+    city:          Toulouse
+    county:        Toulouse
+    state:         Midi-Pyrénées
+    country:       France
+    country_code:  FR
+*/
+address {
+  background-color: inherit;
+  color: darkslategray;
+
+  font-style: italic;
+}
+
+.house-number {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+.road {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+.suburb {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+.zip-code {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+.city {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+.county {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+.state {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+.country {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+.country-code {
+  font-weight: bold;
+}
+
+/* ---=== Preformatted text ===--- */
+pre {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+/* ---=== Figure & figcaption ===--- */
+figure {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+figcaption {
+  background-color: inherit;
+  color: darkslategray;
+}
+
+/* ---=== The Forms ===--- */
+form {
+  background-color: inherit;
+  color: darkslategray;
+
+  margin-block-start: 2em;
+  margin-block-end: 2em;
+}
+
+label {
+  color: rgb(175, 47, 47);
+  color: darkslategray;
+  margin: 0.4em;
+}
+
+input,
+input[type="radio"],
+input[type="checkbox"] {
+  background-color: inherit;
+  color: darkslategray;
+
+  margin: 0.4em 0.8em;
+}
+
+select {
+  background-color: inherit;
+  color: darkslategray;
+
+  margin: 0.4em;
+}
+
+option {
+  background-color: inherit;
+  color: darkslategray;
+
+  margin: 0.2em 0;
+}
+
+textarea {
+  background-color: inherit;
+  color: darkslategray;
+
+  margin: 0.8em 0;
+}
+
+fieldset {
+  background-color: inherit;
+  color: darkslategray;
+
+  margin: 0.4em;
+}
+
+legend {
+  background-color: inherit;
+  color: darkslategray;
+
+  margin: 0.4em;
+}
+
+/* --------------------- Buttons --------------------- */
+
+*[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  background-color: inherit;
+  color: darkslategray;
+
+  padding: 1em 2em;
+  margin-left: 1em;
+}
+
+.responsive-type-sizing {
+  background-color: #333;
+  color: #fff;
+}
+
+/* --------------------- Utility classes --------------------- */
+
+.big {
+  font-size: 2rem;
+}
+
+.utility {
+  font-weight: bold;
+  font-size: 0.8em;
+  letter-spacing: 0.4px;
+
+  color: var(--u-txt-color);
+  background-color: var(--u-bg-color);
+  padding: 0.4em 0.6em;
+  margin: 0.4em;
+  display: inline-block;
+  border-radius: 0.2em;
+  outline: var(--u-outline-color) 1px solid;
+}
+
+.info {
+  --u-bg-color: #0099ff;
+  --u-txt-color: white;
+}
+
+.success {
+  --u-bg-color: green;
+  --u-txt-color: white;
+}
+
+.warning {
+  --u-bg-color: orange;
+  --u-txt-color: #333;
+}
+.warning::before {
+  content: "\0021  ";
+}
+
+.danger {
+  --u-bg-color: red;
+  --u-txt-color: white;
+}
+
+.unavailable {
+  --u-bg-color: #f5f5f5;
+  --u-txt-color: #dddddd;
+  --u-outline-color: #ddd;
+}
