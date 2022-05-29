@@ -6,7 +6,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build"
+    "watch": "parcel src/index.html",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/szened/novakklima/issues"
   },
-  "homepage": "https://github.com/szened/novakklima#readme"
+  "homepage": "https://github.com/szened/novakklima#readme",
+  "devDependencies": {
+    "parcel": "^2.6.0"
+  }
 }
