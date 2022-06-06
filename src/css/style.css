@@ -211,7 +211,7 @@ main {
 }
 
 .big-picture {
-  padding: calc(4rem + 10vw);
+  /* padding: calc(4rem + 10vw); */
   background-image: url("../assets/img/novak-klima-MozJPEG-Q75.jpg");
   background-size: cover;
   background-position: center;
