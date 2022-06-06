@@ -321,6 +321,10 @@ footer {
   background-color: #ddd;
 }
 
+address {
+  font-style: normal;
+}
+
 .kapcsolat {
   display: flex;
   flex-direction: row;
