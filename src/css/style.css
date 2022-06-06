@@ -149,7 +149,7 @@ header {
   /* margin: 2rem 3rem; */
 }
 .logo {
-  width: clamp(5rem, 20vw, 9rem);
+  width: clamp(7rem, 20vw, 9rem);
 }
 
   /* 
