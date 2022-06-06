@@ -140,7 +140,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
+  padding: max(2rem);
 }
 
 .logo-container {
@@ -185,7 +185,9 @@ header {
 }
 
 .phone-svg {
-  width: 1.6rem;
+  --width: 1.6rem;
+  width: --width;
+  width: --width;
   margin-left: 0.4em;
 }
 
