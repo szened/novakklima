@@ -345,4 +345,6 @@ tfoot {
   line-height: 1;
 }
 
-
+.map {
+  width: 80%;
+}
