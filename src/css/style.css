@@ -140,7 +140,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem 10vw;
 }
 
 .logo-container {
@@ -149,8 +149,6 @@ header {
 .logo {
   width: clamp(4rem, 20vw, 9rem);
 }
-
-
 
   /* 
   .main-nav {
@@ -335,7 +333,7 @@ tfoot {
 .contact,
 .opening-hours,
 .map {
-  padding: 0.4em;
+  padding: 0.6em;
 }
 
 .legal {
