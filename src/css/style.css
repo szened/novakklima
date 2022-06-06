@@ -1,6 +1,28 @@
 
 
 :root {
+  /* color: hsl(hue, saturation, lightness); */
+  --pure-black: hsla(0, 0%, 0%, 1);
+  --blue: hsla(213, 100%, 36%, 1);
+  --blue-bg: hsla(213, 100%, 46%, 1);
+  --black-bg: hsla(0, 0%, 9%, 1);
+  --light-bg: hsla(0, 0%, 96%, 1);
+  --accent: hsla(43, 100%, 50%, 1);
+
+  /* brand colors */
+  --pure-black: hsla(0, 0%, 0%, 1);
+  --pure-white: hsla(0, 0%, 100%, 1);
+  --black: hsla(0, 0%, 4%, 1);
+  --white: hsla(0, 0%, 96%, 1);
+  --blue-darker: hsla(213, 100%, 43%, 1);
+  --blue-default: hsla(213, 100%, 46%, 1);
+  --blue-lighter: hsla(213, 100%, 50%, 1);
+  --yellow-darker: hsla(43, 100%, 48%, 1);
+  --yellow-default: hsla(43, 100%, 50%, 1);
+  --yellow-lighter: hsla(43, 100%, 55%, 1);
+
+
+
   --background-color: cornsilk;
 
   /* Font */
@@ -9,6 +31,8 @@
   
 
 }
+
+
 
 /* Box sizing rules */
 *,
@@ -57,12 +81,16 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
+/* Make images and videos responsive by default */
 img,
-picture {
-  max-width: 100%;
-  display: block;
+picture,
+video {
+    display: block;
+    height: auto;
+    max-width: 100%;
 }
+
+
 
 /* Inherit fonts for inputs and buttons */
 input,
@@ -108,38 +136,57 @@ body {
 }
 
 header {
-  /*background-color: var(--background-color);*/
-  /*background-color: #604D3E;*/
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
 }
 
 .logo-container {
-  margin: 2rem 3rem;
+  /* margin: 2rem 3rem; */
 }
 .logo {
-  max-width: 10rem;
+  width: 9rem;
+}
+  /* 
+  .main-nav {
+    justify-content: center;
+  }
+
+  .main-nav-ul {
+    display: flex;
+    height: 100%;
+  }
+
+  .main-nav-li {
+    margin: auto 2rem;
+  }
+
+  .main-nav-a {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+  } 
+  */
+
+.call-me-container {
+  color: inherit;
+  align-items: baseline;
 }
 
-.main-nav {
-  justify-content: center;
-  /* width: 80%; */
-}
-
-.main-nav-ul {
+.call-me-container a {
   display: flex;
-  height: 100%;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-decoration: none;
+  /* text-align: center; */
 }
 
-.main-nav-li {
-  margin: auto 2rem;
-}
-
-.main-nav-a {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 900;
+.phone-svg {
+  width: 1.6rem;
+  margin-left: 0.4em;
 }
 
 main {
@@ -154,10 +201,11 @@ main {
   /* overflow: visible; */
   /* display: flex; */
   /* justify-content: center; */
+
 }
 
 .big-picture {
-  /* height: 100%; */
+  padding: calc(4rem + 10vw);
   background-image: url("../assets/img/novak-klima-MozJPEG-Q75.jpg");
   background-size: cover;
   background-position: center;
@@ -167,13 +215,13 @@ main {
 .services {
   margin: 0 auto;
   width: max-content;
-  padding-top: 28vh;
-  color: #fff;
+  /* padding-top: 28vh; */
+  color: inherit;
   text-align: center;
 }
 
 .services > h2 {
-  color: #000;
+  color: inherit;
   font-size: 1.6rem;
   font-weight: 900;
 }
@@ -182,72 +230,37 @@ main {
   text-align: left;
   padding-left: 1em;
 }
-
+/* 
 .services ::marker {
   content: "\2736  ";
-  color: #000;
+  color: inherit;
   font-size: 1em;
   margin: 1em;
-}
+} */
 
 
 .services h3 {
-  color: #000;
-  font-size: 1rem;
+  color: inherit;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 
-.call-me {
-  margin: 0 auto;
-  padding: 6vw 0;
-  width: 30%;
-  padding-top: 28vh;
-  color: inherit;
-  text-align: center;
-
+.hidden {
+  display: none;
 }
 
-.call-me h2 {
-  color: #000;
-  font-size: 1.4rem;
-  line-height: 1.6;
-  font-weight: 500;
-  text-align: left;
 
+.brands {
+  font-family: inherit;
 }
 
-.call-me a {
-  color: #000;
-  font-size: 1.4rem;
-  font-weight: 900;
-  text-decoration: none;
-  text-align: center;
-
-}
-
-.phone-svg-container {
-  margin: 0 auto;
-
-}
-
-.phone-svg {
-  margin: 0 auto;
-  width: 10%;
-
-}
-
-.brands-container {
-  color: inherit;
-}
-
-.sugg {
+.brands-suggested {
   color: inherit;
   text-align: center;
   padding-top: 0.8em;
-  
 }
 
-.brands {
+.brand-list {
   min-height: 3rem;
   padding: 2rem;
   font-size: 1rem;
@@ -259,14 +272,24 @@ main {
   line-height: 1;
 }
 
-.brand {
+.brand-list-item {
   font-weight: 900;
 }
 
-.brand > span {
+.brand-list-item > span {
   font-size: 0.75rem;
   font-weight: 400;
 }
+
+
+
+
+
+
+
+
+
+
 
 .gallery {
   
@@ -315,3 +338,5 @@ tfoot {
   text-align: center;
   line-height: 1;
 }
+
+
