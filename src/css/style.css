@@ -137,10 +137,12 @@ body {
 
 header {
   width: 100%;
+  max-width: 90em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 10vw;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 .logo-container {
