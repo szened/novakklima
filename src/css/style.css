@@ -140,15 +140,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: max(2rem);
+  padding: 1rem;
 }
 
 .logo-container {
   /* margin: 2rem 3rem; */
 }
 .logo {
-  width: 9rem;
+  width: clamp(4rem, 20vw, 9rem);
 }
+
+
+
   /* 
   .main-nav {
     justify-content: center;
@@ -178,7 +181,8 @@ header {
 .call-me-container a {
   display: flex;
   color: #000;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  /* font-size: clamp(0.8rem, 2em, 2rem); */
   font-weight: 800;
   text-decoration: none;
   /* text-align: center; */
