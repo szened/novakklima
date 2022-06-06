@@ -220,8 +220,8 @@ main {
 
 .services {
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.6);
-  padding: 2rem 3rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 2rem 1rem;
   width: max-content;
   color: inherit;
   text-align: center;
@@ -230,8 +230,9 @@ main {
 
 .services > h2 {
   color: inherit;
+  /* font-size: 1.6rem; */
   font-size: 1.6rem;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .services > ul {
