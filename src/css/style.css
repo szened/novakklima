@@ -146,6 +146,7 @@ header {
 }
 
 .logo-container {
+  display: inherit;
   /* margin: 2rem 3rem; */
 }
 .logo {
@@ -196,6 +197,8 @@ header {
 }
 
 main {
+  display: inherit;
+
   /* background-color: var(--background-color); */
   /* background-color: azure; */
 
@@ -212,7 +215,7 @@ main {
 
 .big-picture {
   padding-block: calc(4rem + 10vw);
-  background-image: url("../assets/img/novak-klima-MozJPEG-Q75.jpg");
+  background-image: url("../assets/images/novak-klima-MozJPEG-Q75.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
