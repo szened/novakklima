@@ -22,6 +22,8 @@
 [Favicon Generator. For real.](https://realfavicongenerator.net/)
 https://realfavicongenerator.net/svg-favicon/
 
+https://realfavicongenerator.net/social/
+
 ## Accessibility
 [CHECK YOUR WCAG COMPLIANCE](https://www.a11yproject.com/checklist/)
 
