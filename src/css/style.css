@@ -197,10 +197,9 @@ header {
 }
 
 main {
-  display: inherit;
 
   /* background-color: var(--background-color); */
-  /* background-color: azure; */
+  background-color: burlywood;
 
   /* background-position: top 20% right 50%; */
   
